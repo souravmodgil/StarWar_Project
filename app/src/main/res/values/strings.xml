@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StarWar</string>
+    <string name="error_message_loading_charcater_list">There seems to have been some error.</string>
+    <string name="default_message_loading_character">Press the button to load people!</string>
+    <string name="name">Name:</string>
+    <string name="height">Height:</string>
+    <string name="mass">Mass</string>
+    <string name="date_time">Date:</string>
+
+</resources>

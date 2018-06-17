@@ -1,0 +1,59 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+
+        <variable
+            name="characterViewModel"
+            type="com.starwar.viewModel.ItemCharacterViewModel"/>
+    </data>
+
+
+    <android.support.v7.widget.CardView
+        app:cardElevation="5dp"
+        android:layout_margin="@dimen/spacing_huge"
+        android:id="@+id/item_character"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@color/bg"
+        android:clickable="true"
+        android:background="@color/bg"
+        android:onClick="@{characterViewModel::onItemClick}"
+        android:padding="@dimen/spacing_large">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_margin="@dimen/spacing_huge"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@{characterViewModel.getName()}"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</layout>

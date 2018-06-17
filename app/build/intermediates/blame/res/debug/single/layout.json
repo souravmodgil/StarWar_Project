@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/macbook/Downloads/StarWar2/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_star_war_character.xml",
+        "source": "/Users/macbook/Downloads/StarWar2/app/src/main/res/layout/activity_star_war_character.xml"
+    },
+    {
+        "merged": "/Users/macbook/Downloads/StarWar2/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_star_war_charcater.xml",
+        "source": "/Users/macbook/Downloads/StarWar2/app/src/main/res/layout/item_star_war_charcater.xml"
+    },
+    {
+        "merged": "/Users/macbook/Downloads/StarWar2/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_character_details.xml",
+        "source": "/Users/macbook/Downloads/StarWar2/app/src/main/res/layout/activity_character_details.xml"
+    },
+    {
+        "merged": "/Users/macbook/Downloads/StarWar2/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_character.xml",
+        "source": "/Users/macbook/Downloads/StarWar2/app/src/main/res/layout/activity_character.xml"
+    }
+]
