@@ -69,12 +69,12 @@ public final class R {
     public static final class id {
         public static final int barrier = 0x7f080020;
         public static final int bottom = 0x7f080023;
-        public static final int chains = 0x7f080029;
-        public static final int dimensions = 0x7f08003c;
-        public static final int direct = 0x7f08003d;
-        public static final int end = 0x7f080040;
-        public static final int gone = 0x7f08004d;
-        public static final int invisible = 0x7f080055;
+        public static final int chains = 0x7f08002a;
+        public static final int dimensions = 0x7f08003d;
+        public static final int direct = 0x7f08003e;
+        public static final int end = 0x7f080041;
+        public static final int gone = 0x7f08004e;
+        public static final int invisible = 0x7f080056;
         public static final int left = 0x7f08005c;
         public static final int none = 0x7f08006a;
         public static final int packed = 0x7f080071;

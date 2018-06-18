@@ -25,6 +25,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
+
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
@@ -32,12 +33,15 @@
             android:layout_gravity="center"
             app:visibility="@{characterViewModel.progressBar}" />
 
-        <TextView
-            android:id="@+id/label_status"
+
+        <Button
+            android:id="@+id/bt_try_again"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{characterViewModel.messageLabel}"
+            android:text="@string/try_agin"
+            android:layout_margin="@dimen/spacing_huge"
+            android:onClick="@{characterViewModel::onItemClick}"
             app:visibility="@{characterViewModel.userLabel}" />
 
         <android.support.v7.widget.RecyclerView

@@ -6,5 +6,6 @@
     <string name="height">Height:</string>
     <string name="mass">Mass</string>
     <string name="date_time">Date:</string>
+    <string name="try_agin">Try Again</string>
 
 </resources>

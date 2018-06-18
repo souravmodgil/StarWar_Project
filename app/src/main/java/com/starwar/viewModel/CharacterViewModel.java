@@ -5,12 +5,14 @@ import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.Toast;
 
 import com.starwar.R;
 import com.starwar.app.AppController;
 import com.starwar.model.StarWarCharacter;
 import com.starwar.model.StarWarCharacterResponse;
 import com.starwar.network.StarWarCharacterService;
+import com.starwar.view.activity.CharacterDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +45,11 @@ public class CharacterViewModel extends Observable {
         messageLabel = new ObservableField<>(context.getString(R.string.default_message_loading_character));
         initializeViews();
         fetchUsersList();
+    }
+    public void onItemClick(View v){
+        initializeViews();
+        fetchUsersList();
+      //  context.startActivity(CharacterDetailsActivity.fillDetail(v.getContext(), starWarCharacter));
     }
 
 

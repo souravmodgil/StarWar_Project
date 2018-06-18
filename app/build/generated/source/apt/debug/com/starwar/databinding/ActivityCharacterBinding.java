@@ -17,7 +17,7 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
     }
     // views
     @NonNull
-    public final android.widget.TextView labelStatus;
+    public final android.widget.Button btTryAgain;
     @NonNull
     public final android.support.v7.widget.RecyclerView listUser;
     @NonNull
@@ -29,13 +29,14 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
     private com.starwar.viewModel.CharacterViewModel mCharacterViewModel;
     // values
     // listeners
+    private OnClickListenerImpl mCharacterViewModelOnItemClickAndroidViewViewOnClickListener;
     // Inverse Binding Event Handlers
 
     public ActivityCharacterBinding(@NonNull android.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        super(bindingComponent, root, 4);
+        super(bindingComponent, root, 3);
         final Object[] bindings = mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds);
-        this.labelStatus = (android.widget.TextView) bindings[2];
-        this.labelStatus.setTag(null);
+        this.btTryAgain = (android.widget.Button) bindings[2];
+        this.btTryAgain.setTag(null);
         this.listUser = (android.support.v7.widget.RecyclerView) bindings[3];
         this.listUser.setTag(null);
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
@@ -50,7 +51,7 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x20L;
+                mDirtyFlags = 0x10L;
         }
         requestRebind();
     }
@@ -80,7 +81,7 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
     public void setCharacterViewModel(@Nullable com.starwar.viewModel.CharacterViewModel CharacterViewModel) {
         this.mCharacterViewModel = CharacterViewModel;
         synchronized(this) {
-            mDirtyFlags |= 0x10L;
+            mDirtyFlags |= 0x8L;
         }
         notifyPropertyChanged(BR.characterViewModel);
         super.requestRebind();
@@ -98,8 +99,6 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
             case 1 :
                 return onChangeCharacterViewModelUserRecycler((android.databinding.ObservableInt) object, fieldId);
             case 2 :
-                return onChangeCharacterViewModelMessageLabel((android.databinding.ObservableField<java.lang.String>) object, fieldId);
-            case 3 :
                 return onChangeCharacterViewModelUserLabel((android.databinding.ObservableInt) object, fieldId);
         }
         return false;
@@ -122,19 +121,10 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
         }
         return false;
     }
-    private boolean onChangeCharacterViewModelMessageLabel(android.databinding.ObservableField<java.lang.String> CharacterViewModelMessageLabel, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x4L;
-            }
-            return true;
-        }
-        return false;
-    }
     private boolean onChangeCharacterViewModelUserLabel(android.databinding.ObservableInt CharacterViewModelUserLabel, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x8L;
+                    mDirtyFlags |= 0x4L;
             }
             return true;
         }
@@ -152,16 +142,15 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
         android.databinding.ObservableInt characterViewModelProgressBar = null;
         android.databinding.ObservableInt characterViewModelUserRecycler = null;
         com.starwar.viewModel.CharacterViewModel characterViewModel = mCharacterViewModel;
-        android.databinding.ObservableField<java.lang.String> characterViewModelMessageLabel = null;
         int characterViewModelUserRecyclerGet = 0;
-        java.lang.String characterViewModelMessageLabelGet = null;
         android.databinding.ObservableInt characterViewModelUserLabel = null;
+        android.view.View.OnClickListener characterViewModelOnItemClickAndroidViewViewOnClickListener = null;
         int characterViewModelUserLabelGet = 0;
 
-        if ((dirtyFlags & 0x3fL) != 0) {
+        if ((dirtyFlags & 0x1fL) != 0) {
 
 
-            if ((dirtyFlags & 0x31L) != 0) {
+            if ((dirtyFlags & 0x19L) != 0) {
 
                     if (characterViewModel != null) {
                         // read characterViewModel.progressBar
@@ -175,7 +164,7 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
                         characterViewModelProgressBarGet = characterViewModelProgressBar.get();
                     }
             }
-            if ((dirtyFlags & 0x32L) != 0) {
+            if ((dirtyFlags & 0x1aL) != 0) {
 
                     if (characterViewModel != null) {
                         // read characterViewModel.userRecycler
@@ -189,27 +178,13 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
                         characterViewModelUserRecyclerGet = characterViewModelUserRecycler.get();
                     }
             }
-            if ((dirtyFlags & 0x34L) != 0) {
-
-                    if (characterViewModel != null) {
-                        // read characterViewModel.messageLabel
-                        characterViewModelMessageLabel = characterViewModel.messageLabel;
-                    }
-                    updateRegistration(2, characterViewModelMessageLabel);
-
-
-                    if (characterViewModelMessageLabel != null) {
-                        // read characterViewModel.messageLabel.get()
-                        characterViewModelMessageLabelGet = characterViewModelMessageLabel.get();
-                    }
-            }
-            if ((dirtyFlags & 0x38L) != 0) {
+            if ((dirtyFlags & 0x1cL) != 0) {
 
                     if (characterViewModel != null) {
                         // read characterViewModel.userLabel
                         characterViewModelUserLabel = characterViewModel.userLabel;
                     }
-                    updateRegistration(3, characterViewModelUserLabel);
+                    updateRegistration(2, characterViewModelUserLabel);
 
 
                     if (characterViewModelUserLabel != null) {
@@ -217,30 +192,48 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
                         characterViewModelUserLabelGet = characterViewModelUserLabel.get();
                     }
             }
+            if ((dirtyFlags & 0x18L) != 0) {
+
+                    if (characterViewModel != null) {
+                        // read characterViewModel::onItemClick
+                        characterViewModelOnItemClickAndroidViewViewOnClickListener = (((mCharacterViewModelOnItemClickAndroidViewViewOnClickListener == null) ? (mCharacterViewModelOnItemClickAndroidViewViewOnClickListener = new OnClickListenerImpl()) : mCharacterViewModelOnItemClickAndroidViewViewOnClickListener).setValue(characterViewModel));
+                    }
+            }
         }
         // batch finished
-        if ((dirtyFlags & 0x34L) != 0) {
+        if ((dirtyFlags & 0x18L) != 0) {
             // api target 1
 
-            android.databinding.adapters.TextViewBindingAdapter.setText(this.labelStatus, characterViewModelMessageLabelGet);
+            this.btTryAgain.setOnClickListener(characterViewModelOnItemClickAndroidViewViewOnClickListener);
         }
-        if ((dirtyFlags & 0x38L) != 0) {
+        if ((dirtyFlags & 0x1cL) != 0) {
             // api target 1
 
-            this.labelStatus.setVisibility(characterViewModelUserLabelGet);
+            this.btTryAgain.setVisibility(characterViewModelUserLabelGet);
         }
-        if ((dirtyFlags & 0x32L) != 0) {
+        if ((dirtyFlags & 0x1aL) != 0) {
             // api target 1
 
             this.listUser.setVisibility(characterViewModelUserRecyclerGet);
         }
-        if ((dirtyFlags & 0x31L) != 0) {
+        if ((dirtyFlags & 0x19L) != 0) {
             // api target 1
 
             this.progressBar.setVisibility(characterViewModelProgressBarGet);
         }
     }
     // Listener Stub Implementations
+    public static class OnClickListenerImpl implements android.view.View.OnClickListener{
+        private com.starwar.viewModel.CharacterViewModel value;
+        public OnClickListenerImpl setValue(com.starwar.viewModel.CharacterViewModel value) {
+            this.value = value;
+            return value == null ? null : this;
+        }
+        @Override
+        public void onClick(android.view.View arg0) {
+            this.value.onItemClick(arg0);
+        }
+    }
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
@@ -275,10 +268,9 @@ public class ActivityCharacterBinding extends android.databinding.ViewDataBindin
     /* flag mapping
         flag 0 (0x1L): characterViewModel.progressBar
         flag 1 (0x2L): characterViewModel.userRecycler
-        flag 2 (0x3L): characterViewModel.messageLabel
-        flag 3 (0x4L): characterViewModel.userLabel
-        flag 4 (0x5L): characterViewModel
-        flag 5 (0x6L): null
+        flag 2 (0x3L): characterViewModel.userLabel
+        flag 3 (0x4L): characterViewModel
+        flag 4 (0x5L): null
     flag mapping end*/
     //end
 }
